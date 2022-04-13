@@ -1,0 +1,7 @@
+{
+  "name": "Be-Inspired",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

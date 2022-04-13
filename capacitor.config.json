@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Be-Inspired",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
