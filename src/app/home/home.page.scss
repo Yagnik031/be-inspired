@@ -33,7 +33,7 @@ ion-content {
       .stories {
         overflow-x: auto;
         width: 100%;
-        margin: 10px;
+        padding: 10px 10px 10px 19px;
         &::-webkit-scrollbar {
           display: none;
         }
@@ -43,8 +43,8 @@ ion-content {
           width: min-content;
 
           .story_card {
-            height: 45px;
-            width: 45px;
+            height: 56px;
+            width: 56px;
             border-radius: 50%;
             overflow: hidden;
             box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
@@ -59,8 +59,34 @@ ion-content {
       }
 
       .list {
-        .list-img {
-          border-radius: 50%;
+        ion-item {
+          margin-bottom: 10px;
+          .list-img {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+          }
+          .robin {
+            .texts {
+              display: flex;
+              position: relative;
+              .list-title {
+              }
+              .list-count {
+                position: absolute;
+                right: 10px;
+                color: #121212;
+                font-size: 12px;
+              }
+            }
+            .list-des {
+              display: -webkit-box;
+              -webkit-line-clamp: 1;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
         }
       }
     }

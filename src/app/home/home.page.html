@@ -5,8 +5,8 @@
     </div>
     <span class="title">Be Inspired</span>
     <div class="icons" slot="end">
-      <ion-icon class="favourite" name="heart-outline"></ion-icon>
-      <ion-icon class="info" name="information-circle-outline"></ion-icon>
+      <ion-icon class="favourite" name="heart-outline" (click)="favouritePage()"></ion-icon>
+      <ion-icon class="info" name="information-circle-outline" (click)="presentAlertConfirm()"></ion-icon>
     </div>
   </ion-toolbar>
 </ion-header>
@@ -16,24 +16,30 @@
       <!-- story start here -->
       <div class="stories">
         <div class="status_bar">
-          <div class="story_card" *ngFor="let a of [1,2,3,4,5,6,7,8,9,10]">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVeUue5VXZXjYmIepoXiSlpBzhl7vuFqG0Ig&usqp=CAU"
-              class="
+          <div class="story_card" *ngFor="let a of story" (click)="OpenStory(a)">
+            <img src="{{a.img}}" class="
               status_img" alt="">
           </div>
         </div>
       </div>
       <!-- story end here -->
 
+      <!-- list start here -->
       <div class="list">
-        <ion-item *ngFor="let item of [1,2,3,4,5,6,7,8,9,0,11,12]">
+        <ion-item *ngFor="let item of list" (click)="categories(item)">
           <ion-thumbnail slot="start">
-            <img class="list-img" src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+            <img class="list-img" src="{{item.img}}">
           </ion-thumbnail>
-          <ion-label>Thought for the day</ion-label>
+          <div class="robin">
+            <div class="texts">
+              <ion-label class="list-title">{{item.title}}</ion-label>
+              <span class="list-count">{{item.count}}</span>
+            </div>
+            <ion-text class="list-des">{{item.des}}</ion-text>
+          </div>
         </ion-item>
       </div>
+      <!-- list end here -->
     </div>
   </div>
 </ion-content>

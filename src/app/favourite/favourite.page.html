@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>favourite</ion-title>
+    <ion-back-button slot="start"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- list start here -->
+  <div class="list">
+    <ion-item *ngFor="let item of favourite_data;let  i = index" (click)="preview(item)">
+      <ion-thumbnail slot="start">
+        <span class="list-id">{{i}}</span>
+      </ion-thumbnail>
+      <div class="robin">
+        <ion-text class="list-des">{{item.des}}</ion-text>
+      </div>
+    </ion-item>
+  </div>
+  <!-- list end here -->
+</ion-content>

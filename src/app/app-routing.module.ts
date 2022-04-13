@@ -12,10 +12,27 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
+    path: 'open-story/:id',
+    loadChildren: () => import('./home/open-story/open-story.module').then(m => m.OpenStoryPageModule)
+  },
+  {
+    path: 'categories/:id',
+    loadChildren: () => import('./home/categories/categories.module').then(m => m.CategoriesPageModule)
+  },
+  {
+    path: 'favourite',
+    loadChildren: () => import('./favourite/favourite.module').then(m => m.FavouritePageModule)
+  },
+  {
+    path: 'preview/:id',
+    loadChildren: () => import('./preview/preview.module').then(m => m.PreviewPageModule)
+  },
+  {
     path: '**',
     redirectTo: 'home',
     pathMatch: 'full'
-  },
+  }
+
 ];
 
 @NgModule({

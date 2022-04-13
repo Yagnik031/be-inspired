@@ -1,0 +1,26 @@
+ion-content {
+  .list {
+    ion-item {
+      ion-thumbnail {
+        position: relative;
+        border: 1px dotted #080808;
+        border-radius: 50%;
+        .list-id {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      .robin {
+        .list-des {
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}

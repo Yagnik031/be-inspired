@@ -1,9 +1,18 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>categories</ion-title>
+    <ion-back-button slot="start"></ion-back-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card>
+    <ion-card-header>{{home_data?.id}}</ion-card-header>
+    <ion-card-content>
+      <ion-label>
+        {{home_data?.des}}
+      </ion-label>
+      <!-- <ion-img src="{{home_data?.img}}"></ion-img> -->
+    </ion-card-content>
+  </ion-card>
 </ion-content>
