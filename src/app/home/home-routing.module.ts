@@ -6,6 +6,17 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage,
+    children: [
+
+      {
+        path: 'open-story',
+        loadChildren: () => import('./open-story/open-story.module').then(m => m.OpenStoryPageModule)
+      },
+      {
+        path: 'categories',
+        loadChildren: () => import('./categories/categories.module').then(m => m.CategoriesPageModule)
+      }
+    ]
   }
 ];
 
@@ -13,4 +24,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class HomePageRoutingModule {}
+export class HomePageRoutingModule { }

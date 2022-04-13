@@ -1,6 +1,16 @@
 {
-	"appId": "io.ionic.starter",
+	"appId": "io.be.inspired",
 	"appName": "Be-Inspired",
 	"webDir": "www",
-	"bundledWebRuntime": false
+	"bundledWebRuntime": false,
+	"plugins": {
+		"SplashScreen": {
+			"launchShowDuration": 3000,
+			"launchAutoHide": false,
+			"androidScaleType": "CENTER_CROP",
+			"splashFullScreen": false,
+			"splashImmersive": false,
+			"backgroundColor": "#1C3461"
+		}
+	}
 }

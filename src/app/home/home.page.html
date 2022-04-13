@@ -1,20 +1,39 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <div class="logo" slot="start">
+      <img class="img" src="../../assets/logo.jpg" alt="">
+    </div>
+    <span class="title">Be Inspired</span>
+    <div class="icons" slot="end">
+      <ion-icon class="favourite" name="heart-outline"></ion-icon>
+      <ion-icon class="info" name="information-circle-outline"></ion-icon>
+    </div>
   </ion-toolbar>
 </ion-header>
+<ion-content>
+  <div class="main">
+    <div class="inner">
+      <!-- story start here -->
+      <div class="stories">
+        <div class="status_bar">
+          <div class="story_card" *ngFor="let a of [1,2,3,4,5,6,7,8,9,10]">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVeUue5VXZXjYmIepoXiSlpBzhl7vuFqG0Ig&usqp=CAU"
+              class="
+              status_img" alt="">
+          </div>
+        </div>
+      </div>
+      <!-- story end here -->
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+      <div class="list">
+        <ion-item *ngFor="let item of [1,2,3,4,5,6,7,8,9,0,11,12]">
+          <ion-thumbnail slot="start">
+            <img class="list-img" src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+          </ion-thumbnail>
+          <ion-label>Thought for the day</ion-label>
+        </ion-item>
+      </div>
+    </div>
   </div>
 </ion-content>
