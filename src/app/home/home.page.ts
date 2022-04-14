@@ -1,7 +1,9 @@
+import { collection, collectionData, Firestore } from '@angular/fire/firestore';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { FirebaseService } from '../services/firebase.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +18,8 @@ export class HomePage {
   constructor(
     private router: Router,
     private alertController: AlertController,
-    private firebase: FirebaseService
+    private firestore: Firestore,
+    private fbservice: FirebaseService
   ) { }
 
 
@@ -24,13 +27,16 @@ export class HomePage {
 
   ionViewWillEnter(): void {
 
-    this.firebase.getNotes(this.collection1).subscribe(
+    this.fbservice.getNotes(this.collection1).subscribe(
       (res: any) => {
         // console.log('firebase home data===>>>>>>', res);
         this.list = res;
       }
     )
-    this.firebase.getNotes(this.collection2).subscribe(
+
+
+
+    this.fbservice.getNotes(this.collection2).subscribe(
       (res: any) => {
         // console.log('firebase stories data===>>>>>>', res);
         this.story = res;
@@ -51,9 +57,7 @@ export class HomePage {
 
 
   async categories(item: any) {
-    console.log(item);
-    item.count += 1;
-    this.firebase.updateNote(this.collection1, item, item.count);
+    // console.log(item);
     this.router.navigate([`/categories/${item.id}`])
   }
 

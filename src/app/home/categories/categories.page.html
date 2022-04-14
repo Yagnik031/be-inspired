@@ -6,12 +6,29 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-card-header>{{home_data?.id}}</ion-card-header>
+  <ion-card *ngFor="let item of des">
+    <ion-card-header>
+      <span>
+        {{home_data?.id}}
+      </span>
+      <span>
+        <ion-icon name="heart-outline" *ngIf="!home_data?.favourited" (click)="favourite(home_data)" class="favourite">
+        </ion-icon>
+        <ion-icon name="heart" *ngIf="home_data?.favourited" (click)="unfavourite(home_data)" class="">
+        </ion-icon>
+      </span>
+    </ion-card-header>
     <ion-card-content>
       <ion-label>
-        {{home_data?.des}}
+        {{item}}
       </ion-label>
+
+      <div class="row">
+        <div class="tools">
+          <ion-icon class="share" name="share-outline" (click)="share(item)"></ion-icon>
+          <ion-icon class="clipboard" name="clipboard-outline" (click)="copy(item)"></ion-icon>
+        </div>
+      </div>
       <!-- <ion-img src="{{home_data?.img}}"></ion-img> -->
     </ion-card-content>
   </ion-card>

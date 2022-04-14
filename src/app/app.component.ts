@@ -1,8 +1,10 @@
+import { DeviceinfoService } from './services/deviceinfo.service';
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { SplashScreen } from '@capacitor/splash-screen';
 import { AlertController, ModalController, Platform } from '@ionic/angular';
+import { StorageService } from './services/storage.service';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +22,8 @@ export class AppComponent {
     private alertController: AlertController,
     public modalCtrl: ModalController,
     private router: Router,
+    private device: DeviceinfoService,
+    private storage: StorageService
   ) {
     this.initializeApp();
     this.alertPresented = false;
@@ -28,6 +32,12 @@ export class AppComponent {
   initializeApp() {
     this.platform.ready().then(() => {
       SplashScreen.hide({ fadeOutDuration: 1000 });
+
+      this.device.getdeviceid().then((device: any) => {
+        console.log('device id==>==>>', device);
+        this.storage.setString('device-id', device.uuid);
+
+      })
       // back button-event....
       this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
         // console.log('Back press handler!');

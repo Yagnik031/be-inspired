@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class FavouritePage implements OnInit {
   favourite_data: any = [];
   collection1: any = 'favourites';
+
   constructor(
     private firebase: FirebaseService,
     private router: Router

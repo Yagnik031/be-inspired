@@ -1,0 +1,28 @@
+.favourite {
+  position: absolute;
+  right: 10px;
+  height: 20px;
+  width: 20px;
+}
+
+.row {
+  margin-top: 10px;
+  height: 20px;
+  .tools {
+    height: 100%;
+    position: relative;
+    display: flex;
+    .share {
+      position: absolute;
+      left: 5px;
+      width: 25px;
+      height: 25px;
+    }
+    .clipboard {
+      position: absolute;
+      right: 5px;
+      height: 25px;
+      width: 25px;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { addDoc, collection, collectionData, deleteDoc, doc, docData, Firestore, updateDoc } from '@angular/fire/firestore';
+import { addDoc, collection, collectionData, deleteDoc, doc, docData, Firestore, query, updateDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -33,6 +33,6 @@ export class FirebaseService {
   updateNote(collectionname: any, note: any, i: any) {
     // console.log(collectionname, note, i);
     const noteDocRef = doc(this.firestore, `${collectionname}/${note.id}`);
-    return updateDoc(noteDocRef, { count: i });
+    return updateDoc(noteDocRef, { favourited: i });
   }
 }
